@@ -1,0 +1,1620 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.2in}
+\setlength\textheight{8in}
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.1in} 
+
+\pagestyle{fancy}
+\headheight 35pt
+
+\lhead{S. Clontz}
+\chead{English Translation of ``Strat\'{e}gies gagnantes...''}
+\rhead{Page \thepage}
+
+\lfoot{\footnotesize Spring 2011}
+\cfoot{}
+\rfoot{\footnotesize Last saved on \today}
+ 
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{wasysym} % for \smiley
+
+      \theoremstyle{plain}
+      \newtheorem*{bigmomma}{Our Goal}
+      \newtheorem{theorem}{Theorem}
+      \newtheorem{lemma}[theorem]{Lemma}
+      \newtheorem{corollary}[theorem]{Corollary}
+      \newtheorem{proposition}[theorem]{Proposition}
+      \newtheorem{axiom}{Axiom}
+      
+      \theoremstyle{definition}
+      \newtheorem{definition}[theorem]{Definition}
+      
+      \theoremstyle{remark}
+      \newtheorem*{remark}{Remark}
+      
+\newcommand{\ds}{\displaystyle}
+
+
+\begin{document}
+
+\centerline{\bf English Translation of ``Strat\'{e}gies gagnantes dans certains jeux topologiques'' }
+\centerline{\it Gabriel Debs, translated by Steven Clontz}
+
+\small \textbf{Abstract.} We prove that on an $\alpha$-favorable space for the Banach-Mazur game, there exists always an $\alpha$-winning strategy depending only on $\alpha$ and $\beta$ last moves. We give an example of a completely regular $\alpha$-favorable space on which the player $\alpha$ has no winning strategy depending only on $\beta$ last move.
+
+\
+
+\parindent=0pt
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\textbf{Introduction.} Rappelons que le jeu de \textit{Banach-Mazur} sur un espace topologique $(X,\mathcal{F})$ est un jeu infini o\`{u} deux joueurs $\alpha$ et $\beta$ choisissent alternativement \`{a} chaque coup, un ouvert non vide contenu dans l'ouvert choisi par l'autre joueur au coup pr\`{e}c\`{e}dent; c'est le joueur $\beta$ qui commence \`{a} jouer. Ainsi au cours d'une partie les joueurs $\alpha$ et $\beta$ construisent deux suites d'ouverts non vides $(V_n)_{n\in N}$ et $(U_n)_{n\in N}$ respectivement, avec $V_n \supset U_n \supset V_{n+1}$; le joueur $\alpha$ gagne la partie si $\displaystyle \bigcap_{n\in N} U_n = \bigcap_{n \in N} V_n \not= \emptyset$.
+
+&
+
+\textbf{Introduction.} Recall that the Banach-Mazur game on a topological space $(X,\mathcal{F})$ is an infinite game where two players $\alpha$ and $\beta$ alternately choose a non-empty open set which is a subset of the set previously chosen by the other player. $\beta$ is the first player to move. The game results in two sequences, $(V_n)_{n\in N}$ chosen by $\alpha$ and $(U_n)_{n\in N}$ chosen by $\beta$, such that $V_n \supset U_n \supset V_{n+1}$; $\alpha$ wins the game in the case that $\displaystyle \bigcap_{n\in N} U_n = \bigcap_{n \in N} V_n \not= \emptyset$.
+
+\\
+
+Le jeu (ou l'espace $X$) est dit $\alpha$-favorable si le joueur $\alpha$ poss\`ede une strat\'egie gagnante. L'inter\^et des espaces $\alpha$-favorables tient au fait qu'ils forment une large classe d'espaces de Baire stable par produit et qui contient tous les cas classiques.
+
+&
+
+The game (or the space $X$) is called $\alpha$-favorable if $\alpha$ has a winning strategy. What makes $\alpha$-favorable spaces interesting is that they form a large class of Baire spaces with stable products which contains the classic cases.
+
+\\
+
+La notion de strat\`egie est utilis\`ee ici au sens des jeux \`a information parfaite, c'est-\`a-dire qu\'a chaque coup les joueurs sont inform\'es de tous les coups pr\'ec\'edemment jou\'es et un joueur peut tenir compte de ces informations dans la construction d'une strat\'egie. Le but de ce travail est d'\'etudier pour un jeu $\alpha$-favorable donn\'e l'existence de strat\'egies simples: plus pr\'ecise\'ement on s'int\'eressera \`a trois types de strat\'egies:
+
+&
+
+The idea of strategy used here is as a perfect information game, that is to say, each round the players are informed of all previous plays, and a player may consider that information in the construction of a strategy. The aim of this work is to study if a game gives the existence of simple $\alpha$-favorable strategies: to be precise, we focus on three specified types of strategies:
+
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+(I) Les strat\'egies $\sigma$ d\'ependant seulement du dernier coup jou\'e (par le joueur $\beta$), c'est-\`a-dire de la forme $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(V_n)$.
+
+&
+
+(I) The strategies $\sigma$ which only depend on the latest play made by $\beta$, that is to say, strategies of the form $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(V_n)$.
+
+\\
+
+(II) Les strat\'egies $\sigma$ d\'ependant seulement des deux derniers coups jou\'es (les derniers coups jou\'es par les joueurs $\alpha$ et $\beta$ respectivement) c'est-\`a-dire de la forme: $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(U_{n-1},V_n)$.
+
+&
+
+(II) The strategies $\sigma$ which only depend on the latest plays by $\alpha$ and $\beta$, that is to say, of the form: $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(U_{n-1},V_n)$.
+
+\\
+
+(III) Les strat\'egies $\sigma$ d\'ependant seulement des deux dernier coups jou\'es par le joueur $\beta$ c'est-\`a-dire de la forme $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(V_{n-1},V_n)$
+
+&
+
+(III) The strategies $\sigma$ which depend on only the last two plays made by $\beta$, that is, $\sigma(V_0,U_0,V_1,\dots,U_{n-1},V_n) = \tau(V_{n-1},V_n)$
+
+\\
+
+\textit{Nous attirons ici l'attention du lecteur \`a ce que certains auteurs appellent ``faiblement $\alpha$-favorable'' ce que nous appelons ``$\alpha$-favorable'', terme qu'ils r\`eservent alors pour les espaces poss\`edant une strat\`egie du type I.}
+
+&
+
+\textit{We'd like to point out that some authors use ``weakly $\alpha$-favorable'' to denote what we refer to as ``$\alpha$-favorable'', which they reserve for when the space has a strategy of type I.}
+
+\\
+
+Le point de d\'epart de ce travail \'etait la question suivante: Est-ce que tout espace $\alpha$-favorable admet une strat\'egie gagnante du type (I)? Cette question qui se pose naturellement a \'et\'e reprise par W. G. Fleissner et K. Kunen puis D. H. Fremlin. Elle est justifi\'ee par le fait que la r\'eponse est positive dans tous les cas classiques. En particulier, un remarquable r\'esultat de F. Galvin et R. Telgarsky affirme que si le joueur $\alpha$ poss\'ede une strat\'egie gagnante qui ne \'epend que du dernier coup $V_n$ et de son num\'ero $n$, alors il existe une strat\'egie gagnante du type (I). Enfin il d\'ecoule d'un r\'esultat de J. C. Oxtoby que le probl\'eme analogue pour le joueur $\beta$ a une r\'eponse positive.
+
+&
+
+The starting point of this work was the question: Does every space admit a positive $\alpha$-favorable strategy of type (I)? This natural question was  posed by W. G. Fleissner, K. Kunen, and D. H. Fremlin. It is justified by the fact that the answer is positive in all classical cases. In particular, a remarkable result of F. Galvin and R. Telgarsky says that if the $\alpha$ player has a winning strategy that depends only on the last play and its $V_n$ number $n$, then there exists a winning strategy of type (I). Finally it follows from a result of J. C. Oxtoby that the similar problem for player $\beta$ has a positive response.
+
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Dans ce travail on construit un espace topologique compl\`etement r\'egulier qui est $\alpha$-favorable avec une strat\'egie gagnante de type (III) et sur lequel il n'existe aucune strat\'egie gagnante du type (I). Mais on d\'emontre que sur tout espace $\alpha$-favorable on peut construire une strat\'egie gagnante de type (II). (Nous avons appris par une correspondance r\'ecente que ce r\'esultat a \'et\'e obtenu ind\'ependement par F. Galvin et R. Telgarsky [7]). En fait notre th\'eor\`eme sera d\'emontr\'e dans un cadre plus g\'en\'eral que celui du jeu de Banach-Mazur, et qui est mieux adapt\'e au ques a \'et\'e r\'ealis\'ee par R. Telgarsky.
+
+&
+
+In this work we construct a completely regular topological space that has an $\alpha$-favorable strategy of type (III) but no $\alpha$-favorable strategy of type (I). However, it can be shown that on any $\alpha$-favorable space we can find a strategy of type (II). (We learned from a recent correspondence that this result has been obtained independently by F. Galvin and R. Telgarsky [7].) In fact, our theorem will be proved in a framework more general than the Banach-Mazur game and is better adapted to the question asked by R. Telgarsky.
+
+\\
+
+Je suis reconnaissant \`a D. H. Fremlin pour des discussions qui m'ont \'et\'e tr\^es utiles pour ce travail.
+
+&
+
+I am grateful to D. H. Fremlin for our discussions which have been very helpful for this work.
+
+\\
+
+\textbf{1. Notations.} On se donne deux ensembles $E, F$ et on note $G = E \cup F$. Dans l'ensemble $G^{(N)}$ des suites  finies d'\'el\'ements de $G$, on notes par $r^\frown s$ la concat\'enation des suites $r$ et $s$. On d\'esigne par $\mathcal{A}(G)$ le sous-ensemble de $G^{(N)}$ form\'e des \textit{suites altern\'ees} $r=(z_i)_{0\leq i \leq n}$ (c'est-\`a-dire v\'erifiant: $z_{i+1} \in E \Leftrightarrow  z_i \in F$) et par $\mathcal{A(G)}$ le sousensemble de $G^N$ form\'e des suites altern\'ees infinies. Si $(x_i)_{0\leq i \leq n}$ et $(y_i)_{0\leq i \leq n}$ sont deux suites finies de $E$ et $F$ respectivement on d\'efinit
+
+&
+
+\textbf{1. Notations.} We are given two sets $E, F$ and denote $G = E\cup F$. We use $G^{(N)}$ to denote the set of finite sequences of elements of $G$, and we use $r^\frown s$ to denote the concatenation of the sequences $r$ and $s$. We denote by $\mathcal{A}(G)$ the subset of $G^{(N)}$ of \textit{alternating sequences} $r=(z_i)_{0\leq i \leq n}$ satisfying $z_{i+1} \in E \Leftrightarrow  z_i \in F$, and similarly let $\mathcal{A}(G)$ denote the subset of $G^N$ (infinite sequences) which alternate. If $(x_i)_{0\leq i \leq n}$ and $(y_i)_{0\leq i \leq n}$ are two finite sequences of $E$ and $F$ respectively we define
+
+\end{tabular}
+
+\[\left<y_i;x_i\right> _{0 \leq i \leq n} = (y_0,x_0,y_1,x_1,\dots,y_n,x_n) \in \mathcal{A}(G)\]
+
+\[\left<x_i;y_i\right> _{0 \leq i \leq n} = (x_0,y_0,x_1,t_1,\dots,x_n,y_n) \in \mathcal{A}(G)\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+On se donne deux relations $R_\alpha \subset F \times E$, et $R_\beta \subset E \times F$. On note $R=(R_\alpha \cup R_\beta) \subset G \times G$ et
+
+&
+
+We are given two relations $R_\alpha \subset F \times E$ and $R_\beta \subset E \times F$. We denote $R=(R_\alpha \cup R_\beta) \subset G \times G$ and
+
+\end{tabular}
+
+\[\mathcal{R} = \{(z_i)_{0\leq i\leq n} \in \mathcal{A}(G) : z_1Rz_{i+1}, 0 \leq i \leq n \}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+On d\'esigne par $\mathcal{R}_{\beta,\alpha}$ (resp. par $\mathcal{R}_{\beta,\beta}$) le sous-ensemble de $\mathcal{R}$ form\'e des suites commen\c{c}ant par un \'el\'ement de $F$ et finissant par un \'el\'ement de $E$ (resp. de $F$); et par $\widetilde{\mathcal{R}}$ (resp. par $\widetilde{\mathcal{R}}_\beta$) l'ensemble des branches infinies de $\mathcal{R}$ (resp. de $\mathcal{R}_\beta = \mathcal{R}_{\beta,\alpha}\cup\mathcal{R}_{\beta,\beta}$). Si $\rho = \left<y_n;x_n\right>_{n\in N} \in \widetilde{\mathcal{R}}_\beta$ on appellera \textit{sous-suite altern\'ee} de $\rho$ toute suite $\rho'$ de la forme $\rho'=\left<y_{n_k};x_{m_k}\right>_{k\in N}$ avec $n_k\leq m_k < n_{k+1}$ pour tout $k\in N$.
+
+&
+
+We denote by $\mathcal{R}_{\beta,\alpha}$ (resp. $\mathcal{R}_{\beta,\beta}$) the subset of $\mathcal{R}$ which form sequences starting with an element of $F$ and ending with an element of $E$ (resp. $F$). We denote the set $\widetilde{\mathcal{R}}$ (resp. $\widetilde{\mathcal{R}}_\beta$) the set of infinite branches of $\mathcal{R}$ (resp. $\mathcal{R}_\beta = \mathcal{R}_{\beta,\alpha}\cup\mathcal{R}_{\beta,\beta}$). If $\rho = \left<y_n;x_n\right>_{n\in N} \in \widetilde{\mathcal{R}}_\beta$ call its \textit{alternating sequence} $\rho' = \left<y_{n_k};x_{m_k}\right>_{k\in N}$ where $n_k\leq m_k < n_{k+1}$ for all $k\in N$.
+
+\\
+
+\textbf{2. Terminologie.} Un \textit{feu alternatif} $(E,F,R,A)$ est la donn\'ee d'un triplet $(E,F,R)$ comme pr\'ec\'edemment et d'un sous-ensemble $A$ de $\widetilde{\mathcal{R}}_\beta$. On dira que $\beta$ est le joueur I (celui qui commence les parties) et que $\alpha$ est le joueur II. La relation $R$ sera dite la r\'egle du jeu, $\widetilde{\mathcal{R}}_\beta$ l'ensemble des parties licites du jeu, et $A$ l\'ensemble des parties licites gagn\'ces par $\alpha$.
+
+&
+
+\textbf{2. Terminology.} An \textit{alternating light} $(E,F,R,A)$ is given by a triple $(E,F,R)$ as before and a subset $A \subseteq \widetilde{\mathcal{R}}_\beta$. We say that $\beta$ is the first player (Player I) and that $\alpha$ is the second player (Player II). The relation $R$ will be called the rules of the game, $\widetilde{\mathcal{R}}_\beta$ the set of legal plays of the game, and $A$ all legal plays of the game won by $\alpha$.
+
+\\
+
+Une \textit{strat\'egie} pour le joueur $\alpha$ est une application $\sigma: \mathcal{R}_{\beta,\beta} \to E$ v\'erifiant:
+
+&
+
+A \textit{strategy} for the player $\alpha$ is a map $\sigma: \mathcal{R}_{\beta,\beta} \to E$ satisfying:
+\end{tabular}
+
+\[ (r^\frown\sigma(r) \in \mathcal{R}_{\beta,\alpha}, \forall r \in \mathcal{R}_{\beta,\beta})\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+On dira qu'une strat\'egie $\sigma$ pour le joueur $\alpha$ est une \textit{tactique} si elle ne d\'epend que du dernier coup jou\'e, c'est-\'a-dire s'il existe $\tau: F \to E$ tel que $\sigma(r^\frown y) = \tau(y)$ pour tout $r \in \mathcal{R}_{\beta,\alpha}$ et $y \in F$. De mani\'ere analogue on dira que $\sigma$ ne d\'epend que des deux derniers coups jou\'es s\'il existe $\tau: R_\beta \to E$ tel que $\sigma(r^\frown s) = \tau(s)$ pour tous $r \in \mathcal{R}_{\beta,\beta}$ et $s \in R_\beta$.
+&
+We say a strategy $\sigma$ for the player $\alpha$ is a \textit{tactitic} if it only depends on the last move by $\beta$, that is to say, there exists $\tau: F \to E$ such that $\sigma(r^\frown y) = \tau(y)$ for all $r \in \mathcal{R}_{\beta,\alpha}$ and $y\in F$. Similarly, we say that $\sigma$ depends only the last two moves if there exists $\tau: R_\beta \to E$ such that $\sigma(r^\frown s) = \tau(s)$ for all $r \in \mathcal{R}_{\beta,\beta}$ and $s \in R_\beta$.
+
+\\
+
+L'ensemble $A(\sigma)$ des parties licites conformes \`a la strat\'egie $\sigma$ est d\'efini par:
+
+&
+
+The set $A(\sigma)$ of legal plays which follow the strategy $\sigma$ is defined by:
+\end{tabular}
+
+\[A(\sigma) = \{\left<y_n;x_n\right>_{n\in N} \in \widetilde{\mathcal{R}}_\beta : x_n = \sigma((\left<y_p,x_p\right>_{o\leq p < n})^\frown y_n) \forall n\in N)\}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+La \textit{strat\'egie} $\sigma$ est dite \textit{gagnante} pour $\alpha$ si $A(\sigma) \subset A$. S'il existe une strat\'egie gagnante pour $\alpha$ le \textit{jeu} est dit \textit{$\alpha$-favorable}.
+&
+The strategy $\sigma$ is called a \textit{winning strategy} for $\alpha$ if $A(\sigma) \subset A$. If there exists a winning strategy for $\alpha$ the game is called \textit{$\alpha$-favorable}.
+\end{tabular}
+
+
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+\textbf{3. Jeux asymptotiques pour $\alpha$.} (Omitted.)
+&
+\textbf{3. Games asymptotic for $\alpha$.} (Omitted.)
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+\textbf{4. Un countre-exemple.}
+
+&
+
+\textbf{4. A counter-example.}
+
+\\
+
+\texttt{Notations 6.} Dans toute la suite on note par:
+
+&
+
+\texttt{Notations 6.} From now on we denote:
+
+\\
+
+$\mathbb{R}^* = \mathbb{R}\setminus\{0\}$
+
+&
+
+$\mathbb{R}^* = \mathbb{R}\setminus\{0\}$
+
+
+\\
+
+$\mathcal{I}$: l'ensemble des intervalles de $\mathbb{R}^*$ qui sont born\'es, ouverts, non vides et \`a extr\'emit\'es rationnelles.
+
+&
+
+$\mathcal{I}$: nonempty open intervals in $\mathbb{R}^*$ which are bounded by rational endpoints
+
+\\
+
+$\mathcal{D}$: la famille des parties au plus d\'enombrables et non vides de $\mathbb{R}^*$.
+
+&
+
+$\mathcal{D}$: the family of nonempty countable subsets of $\mathbb{R}^*$.
+
+\\
+
+$\mathcal{S}$: l'ensemble des fonctions partielles $S: \mathcal{R}^* \to \{0,1\}$ qui sont surjectives (i.e. non constantes) et \`a domaine d\'enombrable. Cet ensemble sera muni de la relation d'inclusion $\subset$ induite par celle de $\mathbb{R}^* \times \{0,1\}$.
+
+&
+
+$\mathcal{S}$: the family of nonconstant partial functions $S: \mathbb{R}^* \to \{0,1\}$ with countable domains. This set is given the partial order given by the inclusion relation $\subset$ induced by $\mathbb{R}^* \times \{0,1\}$.
+
+\\
+
+$X:$ l'ensemble des applications $x: \mathcal{D} \to \mathbb{R}$ v\'erifiant: $\exists \Delta(x) \in \mathcal{D}$, $\exists \tau(x) \in \mathbb{R}^* \setminus \Delta(x)$ tels que:
+
+&
+
+$X:$ the set of maps $x: \mathcal{D} \to \mathbb{R}$ which satisfy $\exists \Delta(x) \in \mathcal{D}$, $\exists \tau(x) \in \mathbb{R}^* \setminus \Delta(x)$ such that:
+
+\end{tabular}
+
+\begin{center}
+\begin{tabular}{ccc}
+(i) & $\forall D \subset \Delta(x)$, & $x(D) = \tau(x)$; \\
+(ii) & $\forall D \not\subset \Delta(x)$, & $x(D) = 0$;
+\end{tabular}
+\end{center}
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+\textit{On munit $X$ de topologie de la convergence uniforme sur les parties d\'enombrables de $\mathcal{D}$.}
+
+&
+
+\textit{We equip $X$ the topology of uniform convergence for the countable subsets in $\mathcal{D}$.}
+
+\\
+
+Pour $I \in \mathcal{I}$, et $S \in \mathcal{S}$:
+
+&
+
+For $I \in \mathcal{I}$, and $S \in \mathcal{S}$:
+
+\end{tabular}
+
+\centerline{(Translator's note: I have changed $\{f=y\}$ to $f^{-1}(y)$ throughout this paper.) }\[V[S,I] = \{x \in X: x(S^{-1}(1)) \in I \text{ and } x(\{t\}) = 0 \ \forall t \in S^{-1}(0) \}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\texttt{Proposition 7.} Sur l'espace compl\'etement r\'egulier $X$ la famille
+
+&
+
+\texttt{Proposition 7.} On the completely regular space $X$, the family
+
+\end{tabular}
+
+\[\{V[S,I] : S \in \mathcal{S}, I \in \mathcal{I}\}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+forme une base de topologie et on a: 
+
+&
+
+forms a base for the topology on $X$ such that:
+
+\end{tabular}
+
+\[(V[S_1,I_1] \supset V[S_2,I_2]) \Leftrightarrow (S_1 \subset S_2 \text{ and } I_1 \supset I_2)\]
+ 
+ \
+ 
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\textit{D\'emonstration,} Remarquons que si pour $\delta>0$ on a $]-\delta,\delta[ \cap I = \emptyset$ alors: $V[S,I] = \{x\in X: x(\{S=1\})\in I\} \cap \{x\in X: x(\{t\})\in ]-\delta,\delta[, \forall t \in \{S=0\}\}$ puisqu'un \'el\'ement de $X$ ne prend qu'une seule valeur $\not= 0$ et que $0 \not\in I$; done les $V[S,I]$ sont ouverts dans $X$.
+
+&
+
+\textit{Proof.} There exists a $\delta>0$ such that $(-\delta,\delta) \cap I = \emptyset$ and $V[S,I] = \{x\in X: x(S^{-1}(1))\in I\} \cap \{x\in X: x(\{t\})\in (-\delta,\delta) \ \forall t\in S^{-1}(0)\}$ since an element of $X$ takes only a single value $\not= 0$ and $0 \not\in I$; therefore the $V[S,I]$ are open in $X$.
+
+\\
+
+Soit $U$ un voisinage \'el\'ementaire d'un \'el\'ement $x_0 \in X$:
+
+&
+
+Let $U$ be a basic neighborhood about $x_0 \in X$:
+
+\end{tabular}
+
+\[ U = \{x\in X : |x(D_i)-x_0(D_i)|<\epsilon, \forall i \in \mathbb{N}\}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+o\`u $\epsilon>0$ et $\{D_i:i\in \mathbb{N}\}$ est une partie d\'enombrable de $\mathcal{D}$. Consid\'erons l'\'el\'ement $S$ de $\mathcal{S}$ d\'efini par $(\{S=1\} = \Delta(x_0) \text{ et } \{S=0\}=\bigcup_{i\in \mathbb{\mathbb{N}}} (D_i\setminus\Delta(x_0))\cup \{t_0\})$ o\'u $t_0$ est un \'el\'ement quelconque de $\mathbb{R}^*\setminus(\bigcup_{i\in \mathbb{N}} D_i \cup \Delta(x_0))$ et soit $I \in \mathcal{I}$ tel que $\tau(x_0)\in I$ et $\textrm{diam}(I)<\epsilon$, alors $V[S,I]\subset U$. En effet si $x\in V[S,I]$ alors $x(\Delta(x_0))\not= 0$ done $\Delta(x_0)\subset\Delta(x)$; par suite:
+
+&
+
+for $\epsilon>0$ and where $\{D_i : i \in \mathbb{N}\}$ is a countable subset of $\mathcal{D}$. Consider the element $S$ of $\mathcal{S}$ defined by $(S^{-1}(1) = \Delta(x_0) \text{ and } S^{-1}(0)=\bigcup_{i\in \mathbb{N}} (D_i\setminus\Delta(x_0))\cup \{t_0\})$ where $t_0$ is any element of $\mathbb{R}^*\setminus(\bigcup_{i\in \mathbb{N}} D_i \cup \Delta(x_0))$ and let $I \in \mathcal{I}$ such that $\tau(x_0)\in I$ and $\textrm{diam}(I)<\epsilon$, then $V[S,I]\subset U$. Indeed, if $x\in V[S,I]$ then $x(\Delta(x_0))\not= 0$ and therefore $\Delta(x_0)\subset\Delta(x)$; resulting in:
+
+\end{tabular}
+
+\[(D_i \subset \Delta(x_0) \subset \Delta(x)) \Rightarrow (x(D_i) \text{ and } x_0(D_i)\in I) \Rightarrow (|x(D_i)-x_0(D_i)|<\epsilon),\]
+
+\[(D_i \not\subset \Delta(x_0) \Rightarrow (\exists t \in D_i\setminus \Delta(x_0): x(\{t\})=0) \Rightarrow (x(D_i)=x_0(D_i)=0)\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+et $x\in U$. Donc pour $S$, $I$ ainsi d\'efinis on a: $x_0\in V[S,I]\subset U$. Enfin si $x_0 \in V[S_1,I_1] \cap V[S_2,I_2]$ alors $S_1$ et $S_2$ sont n\'ecessairement compatibles $S_1 \cup S_2 \in \mathcal{S})$ et $I_1 \cap I_2 \not= \emptyset$; done
+
+&
+
+and $x \in U$. So $S$, $I$ were well defined: $x_0 \in V[S,I]\subset U$. Finally, if $x_0 \in V[S_1,I_1] \cap V[S_2,I_2]$ then $S_1$ and $S_2$ are necessarily compatible $(S_1 \cup S_2 \in \mathcal{S})$ and $I_1 \cap I_2 \not= \emptyset$; therefore
+
+\end{tabular}
+
+\[x_0 \in V[S_1 \cup S_2, I_1 \cap I_2] \subset V[S_1,I_1] \cap V[S_2,I_2]\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Supposons maintenant que $V_2 = V[S_2,I_2] \subset V[S_1,I_1] = V_1$:
+
+&
+
+Now suppose $V_2 = V[S_2,I_2] \subset V[S_1,I_1] = V_1$:
+
+\\
+
+(a) Si $I_2 \not\subset I_1$ et $t \in I_2 \setminus (I_1 \cup \textrm{Dom}S_1 \cup \textrm{Dom} S_2) \not= \emptyset$ (puisque $I_2 \setminus I_1 = \emptyset$ ou $\not\in \mathcal{D}$), alors pour l'\'el\'ement $x$ de $X$ d\'efini par: $(\tau(x) = t$ et $\Delta(x) = \{S_2 = 1\})$ on a: $x \in V_2 \setminus V_1$.
+
+&
+
+(a) If $I_2 \not\subset I_1$ and $t \in I_2 \setminus (I_1 \cup \textrm{Dom}S_1 \cup \textrm{Dom} S_2) \not= \emptyset$ (since $I_2 \setminus I_1 = \emptyset$ or $\not\in \mathcal{D}$), then for the element $x$ of $X$ defined by: $(\tau(x) = t$ and $\Delta(x) = S_2^{-1}(1))$ and thus $x \in V_2 \setminus V_1$ (a contradiction).
+
+\\
+
+(b) Si $S_1 \not\subset S_2$ alors on a:
+
+&
+
+(b) If $S_1 \not\subset S_2$ then:
+
+\end{tabular}
+
+\[\exists t \in \textrm{Dom}S_1: (t \not\in \textrm{Dom}S_2) \text{ or } (t\in \textrm{Dom}S_2 \text{ and } S_1(t) \not= S_2(t))\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+de sorte que, en posant $S(t) = 1-S_1(t)$, on ait: $S= S_2 \cup \{t,S(t)\}\in \mathcal{S}$. Soient $r \in I_2\setminus \textrm{Dom}S$ et $x$ l'\'el\'ement de $X$ d\'efini par: $(\tau(x) = r \text{ et } \Delta(x) = \{S=1\})$, alors $x\in V_2$ puisque $S_2 \subset S$ et $x\not\in V_1$ puisque:
+
+&
+
+so that, by having $S(t) = 1-S_1(t)$, we have: $S= S_2 \cup \{(t,S(t))\}\in \mathcal{S}$. Let $r \in I_2\setminus \textrm{Dom}S$ and $x$ the element of $X$ defined by: $(\tau(x) = r \text{ and } \Delta(x) = S^{-1}(1))$, then $x\in V_2$ since $S_2 \subset S$ and $x\not\in V_1$ since:
+
+\end{tabular}
+
+\[x(\{t\}) = r \not= 0 \Leftrightarrow S_1(t) = 0\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+et
+
+&
+
+and
+
+\end{tabular}
+
+\[x(\{t\}) = 0 \not\in I_1 \Leftrightarrow S_1(t) = 1\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc $I_2 \subset I_1$ et $S_1 \subset S_2$ ce qui d\'emontre l'\'equivalence annonc\'ee puisque l'implication inverse est triviale. \qed
+
+&
+
+So $I_2 \subset I_1$ and $S_1 \subset S_2$ which proves the claimed equivalence since reverse implication is trivial. \qed
+
+\\
+
+\texttt{Th\'eor\'eme 8.} \textit{Il existe sur $X$ une strat\'egie gagnante pour le joueur $\alpha$ qui ne d\'epend que des deux derniers coups jou\'es par le joueur $\beta$.}
+
+&
+
+\texttt{Theorem 8.} \textit{There exists on $X$ a winning strategy for the player $\alpha$ which depends on only the last two plays by $\beta$.}
+
+\\
+
+Fixons pour tout $D \in \mathcal{D}$: une suite $(\Phi_n(D))_{n\in N}$ de parties d\'enombrables deux \`a deux disjointes de $\mathbb{R}^*\setminus D$, et une suite $(\phi_{n,D})_{n\in N}$ de bijections $\phi_{n,D} : D \to \Phi_n(D)$; et posons $\Phi(D) = \bigcup_{n\in N} \Phi_n(D) \subset \mathbb{R}^{*}\setminus D$, et $\mathcal{F}_{-1} = \emptyset$.
+
+&
+
+Fix for all $D \in \mathcal{D}$ a sequence $(\Phi_n(D))_{n\in N}$ of countable pairwise disjoint subsets of $\mathbb{R}^*\setminus D$ and a sequence $(\phi_{n,D})_{n\in N}$ of bijections $\phi_{n,D} : D \to \Phi_n(D)$; and let $\Phi(D) = \bigcup_{n\in N} \Phi_n(D) \subset \mathbb{R}^{*}\setminus D$, and $\mathcal{T}_{-1} = \emptyset$.
+
+\\
+
+Pour tout $n \in N$, on d\'efinit:
+
+&
+
+For all $n \in N$, define:
+
+\end{tabular}
+
+\[\mathcal{T}_n = \{ (T',T) \in \mathcal{S} \times \mathcal{S}: T' \subset T, \Phi(\textrm{Dom}T')\subset \textrm{Dom}T, T \restriction \Phi_p(\textrm{Dom}T') = 1, \forall p\geq n\}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+$\mathcal{T} = \bigcup_{n\in N} \mathcal{T}_n$ et $\mathcal{F}$ l'ensemble des parties finies de $\mathcal{D}$. La d\'emonstration du th\'eor\'eme repose sur le lemme suivant:
+
+&
+
+$\mathcal{T} = \bigcup_{n\in N} \mathcal{T}_n$ and $\mathcal{F}$ all finite subsets of $\mathcal{D}$. The proof of the theorem is then based on the following lemma:
+
+\\
+
+\texttt{Lemme 9.} \textit{Il existe deux applications $f: \mathcal{S} \cup \mathcal{T} \to \mathcal{S}$ et $d: \mathcal{S} \cup \mathcal{T} \to \mathcal{F}$ v\'erifiant:}
+
+&
+
+\texttt{Lemma 9.} \textit{There exist two maps $f: \mathcal{S} \cup \mathcal{T} \to \mathcal{S}$ and $d: \mathcal{S} \cup \mathcal{T} \to \mathcal{F}$ such that:}
+
+\\
+
+(a) \textit{Si $T \in \mathcal{S}$ alors $(T,f(T)) \in \mathcal{T}_0$,}
+
+&
+
+(a) \textit{If $T \in \mathcal{S}$ then $(T,f(T)) \in \mathcal{T}_0$.}
+
+\\
+
+(b) \textit{Si $(T',T) \in \mathcal{T}_n$ alors $(T,f(T',T))\in\mathcal{T}_{n+1}$.}
+
+&
+
+(b) \textit{If $(T',T) \in \mathcal{T}_n$ then $(T,f(T',T))\in\mathcal{T}_{n+1}$.}
+
+\\
+
+(c) \textit{Si $f(T_0) \subset T_1$ et $f(T_{n-1},T_n) \subset T_{n+1}$ pour tout $n \geq 1$, alors}
+
+&
+
+(c) \textit{If $f(T_0) \subset T_1$ and $f(T_{n-1},T_n) \subset T_{n+1}$ for all $n \geq 1$, then}
+
+\end{tabular}
+
+\[ d(T_{n-1},T_n) = \{\textrm{Dom}T_p : 0 \leq p \leq n\}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\texttt{D\'emonstration.} Pour $T \in \mathcal{S}$ et $D = \textrm{Dom}T$, on d\'efinit $f(T) \in \mathcal{S}$ par:
+
+&
+
+\texttt{Proof.} For $T \in \mathcal{S}$ and $D = \textrm{Dom}T$, we define $f(T) \in \mathcal{S}$ such that:
+
+\end{tabular}
+
+\[
+\textrm{Dom}f(T) = D \cup \Phi(D); \textrm{\space} f(T)|_D=T; \textrm{\space}  f(T)|_{\Phi(D)} = 1
+\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc (a) est v\'erifi\'e.
+
+&
+
+So (a) is verified.
+
+\\
+
+Pour $(T',T)\in \mathcal{T}_n\setminus\mathcal{T}_{n-1}$ avec $D' = \textrm{Dom}T' \subset \textrm{Dom} T = D$ on d\'efinit $S = f(T',T)$ et $d(T',T)$ par:
+
+&
+
+For $(T',T)\in \mathcal{T}_n\setminus\mathcal{T}_{n-1}$ with $D' = \textrm{Dom}T' \subset \textrm{Dom} T = D$ we define $S = f(T',T)$ and $d(T',T)$ such that:
+
+\end{tabular}
+
+\setcounter{equation}{0}
+%(1)
+\begin{equation}
+d(T',T) = \{l_p(T',T) : 0 \leq p \leq n+1\}
+\end{equation}
+
+%(2)
+\begin{equation}
+0\leq p \leq n \Rightarrow l_p(T',T) = \phi^{-1}_{p,D'}(\Phi_p(D') \cap T^{-1}(1))
+\end{equation}
+
+%(3)
+\begin{equation}
+p \geq n+1 \Rightarrow l_p(T',T) = \textrm{Dom}T = D
+\end{equation}
+
+%(4)
+\begin{equation}
+\textrm{Dom} S = D \cup \Phi(D)
+\end{equation}
+
+%(5)
+\begin{equation}
+S|_D = T
+\end{equation}
+
+%(6)
+\begin{equation}
+\Phi_p(D) \cap S^{-1}(1) = \phi_{p,D}(l_p(T',T)) \ \forall p \in \mathbb{N}
+\end{equation}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Il d\'ecoule de (3) et (6) que $S|_{\Phi_p(D)} = 1$ pour tout $p \geq n+1$ donc $(T,f(T',T)) \in \mathcal{T}_{n+1}$ et (b) est v\'erifi\'e.
+
+&
+
+It follows from (3) and (6) that $S|_{\Phi_p(D)} = 1$ for all $p \geq n+1$, so $(T,f(T',T)) \in \mathcal{T}_{n+1}$ and (b) is verified.
+
+\\
+
+De plus $(T,f(T',T)) \not\in \mathcal{T}_n$; en effet:
+
+&
+
+Furthermore $(T,f(T',T)) \not\in \mathcal{T}_n$; in fact:
+
+\end{tabular}
+
+\[
+\begin{array}{rcl}
+\Phi_n(D) \cap S^{-1}(1)
+& = &
+\phi_{n,D}(l_n(T',T))
+\\ & = &
+\phi_{n,D}(D')
+\\ & \subset &
+\Phi_n(D)
+\end{array}
+\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+et la derni\'ere inclusion est stricte puisque $D'$ est contenu strictement dans $D$.
+
+&
+
+and the last inclusion is strict because $D'$ is strictly contained in $D$.
+
+\\
+
+Soit $(T_n)_{n\in \mathbb{N}}$ une suite satisfaisant les hypoth\'eses de (c) et posons: $D_n = \mathrm{Dom}T_n$ et $S_n = f(T_n,T_{n+1})$. Comme $T_1|_{\Phi(D_0)} = S_0|_{\Phi(D_0)} = 1$ on a $(T_0,T_1) \in \mathcal{T}_0$ et d'apr\`es (b) on a alors $(T_n,T_{n+1}) \in \mathcal{T}_n\setminus\mathcal{T}_{n-1}$. Nous allons maintenant montrer par r\'ecurrence sur $n\geq 1$ que $l_p(T_{n-1},T_n) = D_p$ pour $0 \leq p \leq n$. Pour $n=1$, on a d'apr\`es (2) et (3):
+
+&
+
+Let $(T_n)_{n\in \mathbb{N}}$ be a sequence satisfying the hypotheses of (c) and let $D_n = \mathrm{Dom}T_n$ and $S_n = f(T_n,T_{n+1})$. As $T_1|_{\Phi(D_0)} = S_0|_{\Phi(D_0)} = 1$ with $(T_0,T_1) \in \mathcal{T}_0$ and by (b) was then $(T_n,T_{n+1}) \in \mathcal{T}_n\setminus\mathcal{T}_{n-1}$. We will now show by induction on $n \geq 1$ that $l_p(T_{n-1},T_n) = D_p$ for $0 \leq p \leq n$. For $n=1$, we have by (2) and (3):
+
+\end{tabular}
+
+\[
+l_0(T_0,T_1) = \phi_{0,D_0}^{-1}(\Phi_0(D_0) \cap T_1^{-1}(1)) = \phi_{0,D_0}^{-1}(\Phi_0(D_0)) = D_0
+\]
+
+\[
+l_1(T_0,T_1) = D_1
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Supposons la relation \'etablie pour $n$ alors d'apr\`es (3):
+
+&
+
+Suppose it holds for $n$, then by (3):
+
+\end{tabular}
+
+\[l_{n+1}(T_n,T_{n+1})=D_{n+1}\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+et pour $p\leq n$ on a d'apr\'es (2) et (6):
+
+&
+
+and for $p \leq n$ by (2) and (6):
+
+\end{tabular}
+
+\[
+\begin{array}{r@{=}l}
+l_p(T_n,T_{n+1})
+&
+\phi_{p,D_n}^{-1}(\Phi_p(D_n) \cap S_n^{-1}(1)) = \phi_{p,D_n}^{-1}(\phi_{p,D_n}(l_p(T_{n-1},T_n)))
+\\ &
+l_p(T_{n-1},T_n) = D_n
+\end{array}
+\]
+
+\
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc d'apr\`es (1) on a $d(T_{n-1},T_n) = \{D_p : 0 \leq p \leq n\}$. \qed
+
+&
+
+Therefore, after (1) we have $d(T_{n-1},T_n) = \{D_p : 0 \leq p \leq n\}$. \qed
+
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\texttt{D\'emonstration du th\'eor\`eme 8.} Fixons pour tout $D \in \mathcal{D}$ une surjection $\vartheta_D: \mathbb{N} \to D$. Si $(T',T) \in \mathcal{T}$ et $d(T',T) = \{D_p : 0 \leq p \leq n\}$ on choisit pour tout $J \in \mathcal{I}$ un \'el\'ement $I = g(T',T,J)$ de $\mathcal{J}$ v\'erifiant
+
+&
+
+\texttt{Proof of Theorem 8.} Fix for all $D \in \mathcal{D}$ a surjection $\vartheta_D: \mathbb{N} \to D$. If $(T',T) \in \mathcal{T}$ and $d(T',T) = \{D_p : 0 \leq p \leq n\}$ choose for all $J \in \mathcal{I}$ an element $I = g(T',T,J)$ of $\mathcal{I}$ such that
+
+\end{tabular}
+
+\setcounter{equation}{0}
+\begin{equation}
+\mathrm{diam}(I) < \frac{1}{2}\mathrm{diam}(J)
+\end{equation}
+\begin{equation}
+\overline{I} \subset J
+\end{equation}
+\begin{equation}
+I \cap \{\vartheta_{D_p}(q) : 0 \leq p,q \leq n\} = \emptyset
+\end{equation}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+On d\'efinit ainsi une application $g: \mathcal{T} \times \mathcal{I} \to \mathcal{I}$.
+
+&
+
+We also define a map $g: \mathcal{T} \times \mathcal{I} \to \mathcal{I}$.
+
+\\
+
+Consid\'erons maintenant la $\alpha$-strat\'egie $\sigma$ qui ne d\'epend que des deux derniers jeux de $\beta$ et qui est d\'efinie par
+
+&
+
+Now consider the $\alpha$-strategy $\sigma$ which only depends on the last two moves by $\beta$ and is defined by
+
+\end{tabular}
+
+\[
+\sigma(V[T,J]) = V[f(T),J]
+\]
+
+\[
+\sigma(V[T',J'],V[T,J]) = V[f(T',T),g(T',T,J)]
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Si dans une partie compatible avec $\sigma$ le joueur $\beta$ a jou\'e au $n$ \`eme coup: $V[T_n,J_n] = V_n$ alors en posant: $D_n = \textrm{Dom} T_n$ et $I_n = g(T_{n-1},T_n,J_n)$ on a d'apr\`es (1) et (2) que $\bigcap_{n\in\mathbb{N}} I_n = \bigcap_{n\in\mathbb{N}} J_n = \{t\}$ et d'apr\`es (3) et lemme 9 (c) que $t \not\in \bigcup_{p,q \in \mathbb{N}} \{\vartheta_{D_p}(q)\} = \bigcup_{n\in\mathbb{N}} D_n$. Donc l'\'el\'ement $a$ de $X$ d\'efini par ($\tau(a) = t$ et $\Delta(a) = \bigcup_{n \in \mathbb{N}} \{T_n = 1\}$) v\'erifie $a \in \bigcap_{n\in\mathbb{N}} V_n$ et par suite la strat\'egie $\sigma$ est gagnante pour $\alpha$. \qed
+
+&
+
+If a play is compatible with $\sigma$ the player $\beta$ plays on the $n^{\textrm{th}}$ turn: $V[T_n,J_n] = V_n$ while having: $D_n = \textrm{Dom} T_n$ and $I_n = g(T_{n-1},T_n,J_n)$ after it has (1) and (2) that $\bigcap_{n\in\mathbb{N}} I_n = \bigcap_{n\in\mathbb{N}} J_n = \{t\}$ and by (3) and Lemma 9 (c), $t \not\in \bigcup_{p,q \in \mathbb{N}} \{\vartheta_{D_p}(q)\} = \bigcup_{n\in\mathbb{N}} D_n$. So the element $a$ of $X$ defined by ($\tau(a) = t$ et $\Delta(a) = \bigcup_{n \in \mathbb{N}} T_n^{-1}(1) $) satisfies $a \in \bigcap_{n\in\mathbb{N}} V_n$ and hence the strategy $\sigma$ is $\alpha$-favorable. \qed
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+\texttt{Th\'eor\`eme 10.} \textit{Il n'existe pas sur $X$ de strat\'egie gagnante pour le joueur $\alpha$ qui ne d\'epende que du dernier coup jou\'e par le jouer $\beta$.}
+
+&
+
+\texttt{Theorem 10.} \textit{There does not exist an $\alpha$-winning strategy on $X$ which depends on only the most recent play by $\beta$.}
+
+\\
+
+Dans toute la suite on d\'esigne par $\mu$ une strat\'egie qui ne d\'epende que du derni\c{e}r coup jou\'e, et on munit $\mathcal{S}\times\mathcal{I}$ de la relation de pr\'eordre $\prec$ d\'efinie par:
+
+&
+
+In all that follows we denote by $\mu$ a strategy that depends only on the last move by $\beta$, and we endow on $\mathcal{S}\times\mathcal{I}$ the preorder relation $\prec$ defined by:
+
+\end{tabular}
+
+\[((S,I)\prec(T,J))\Leftrightarrow (S\prec T; \overline{J}\subset I; \textrm{diam}J < \frac{1}{2}\textrm{diam}I)\]
+
+
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\texttt{Lemme 11.} \textit{Si $\mu$ est gagnante pour $\alpha $ alors il existe $g:\mathcal{S}\times\mathcal{I}\to\mathcal{S}\times\mathcal{I}$ v\'erifiant:}
+
+&
+
+\texttt{Lemma 11.} \textit{If $\mu$ is an $\alpha$-winning strategy then there exists $g:\mathcal{S}\times\mathcal{I}\to\mathcal{S}\times\mathcal{I}$ such that:}
+
+\\
+
+(a) \textit{$(T,J)\prec g(T,J)$ pour tout $(T,J)\in \mathcal{S}\times\mathcal{I}$}.
+
+&
+
+(a) \textit{$(T,J)\prec g(T,J)$ for all $(T,J)\in \mathcal{S}\times\mathcal{I}$}.
+
+\\
+
+(b) \textit{Si $g(T_n,J_n)\prec (T_{n+1},J_{n+1})$ pour tout $n\in\mathbb{N}$, alors $\left(\bigcap_{n\in\mathbb{N}}J_n\right)\cap\left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right)=\emptyset$.}
+
+&
+
+(b) \textit{If $g(T_n,J_n)\prec (T_{n+1},J_{n+1})$ for all $n\in\mathbb{N}$, then $\left(\bigcap_{n\in\mathbb{N}}J_n\right)\cap\left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right)=\emptyset$.}
+
+\\
+
+\texttt{D\'emonstration.} On peut supposer que $\mu(V[T,J])=V[h(T,J)]$ o\`u $h:\mathcal{S}\times\mathcal{I}\to\mathcal{S}\times\mathcal{I}$ v\'erifie $(T,J)\prec h(T,J)$ (proposition 7).
+
+&
+
+\texttt{Proof.} We may assume that $\mu(V[T,J])=V[h(T,J)]$ for $h:\mathcal{S}\times\mathcal{I}\to\mathcal{S}\times\mathcal{I}$ satisfying $(T,J)\prec h(T,J)$ by Proposition 7.
+
+\end{tabular}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Pour tout $S\in\mathcal{S}$ notons par $\widetilde{S}$ l'\'el\'ement de $\mathcal{S}$ d\'efini par: ($\textrm{Dom}\widetilde{S} = \textrm{Dom}S = D$ et $\widetilde{S}(t)=1-S(t), \forall t\in D$). Si $h(T,J)=(S,I)$, posons $\widetilde{h}(T,J)=(\widetilde{S},I)$. On d\'edinit maintenant $g$ par:
+
+&
+
+For all $S\in\mathcal{S}$ we denote $\widetilde{S}$ to be the element of $\mathcal{S}$ defined by $\textrm{Dom}\widetilde{S} = \textrm{Dom}S = D$ and $\widetilde{S}(t)=1-S(t), \forall t\in D$. If $h(T,J)=(S,I)$, we let $\widetilde{h}(T,J)=(\widetilde{S},I)$. We define $g$ by:
+
+\end{tabular}
+
+\[g(T,J)=\widetilde{h}(\widetilde{h}(T,J))\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+qui v\'erifie \'evidemment (a).
+
+&
+
+which satisfies (a).
+
+\\
+
+Soit $(T_n,J_n)_{n\in\mathbb{N}}$ une suite satisfaisant les hypoth\`eses de (b) et posons $h(T_n,J_n)=(S_n,I_n)$ alors on a:
+
+&
+
+Let $(T_n,J_n)_{n\in\mathbb{N}}$ be a sequence satisfying the hypotheses of (b) and letting $h(T_n,J_n)=(S_n,I_n)$ we then have:
+
+\end{tabular}
+
+\[
+(T_n,J_n)\prec h(T_n,J_n) = (S_n,I_n) \prec \widetilde{h}(\widetilde{S}_n,I_n)=g(T_n,J_n)\prec(T_{n+1},J_{n+1})
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc:
+
+&
+
+So:
+
+\end{tabular}
+
+\[
+h(T_n,J_n)\prec (T_{n+1},J_{n+1}) \text{ and } h(\widetilde{S}_n,I_n)\prec (\widetilde{T}_{n+1},J_{n+1})\prec (\widetilde{S}_{n+1},I_{n+1})
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc en posant $V_n=V[T_n,J_n]$ on d\'efinit les coups jou\'es par $\beta$ dans une partie compatible avec la strat\'egie $\mu$ et de m\^eme pour $W_n=V[\widetilde{S}_n,I_n]$. Si $a \in \bigcap_{n\in\mathbb{N}} V_n$ et $b \in \bigcap_{n\in\mathbb{N}} W_n$ alors on a:
+
+&
+
+So we let $V_n=V[T_n,J_n]$ define the moves by $\beta$ which are consistent with the strategy $\mu$ and define $W_n=V[\widetilde{S}_n,I_n]$. If $a \in \bigcap_{n\in\mathbb{N}} V_n$ and $b \in \bigcap_{n\in\mathbb{N}} W_n$ then we have:
+
+\end{tabular}
+
+\setcounter{equation}{0}
+%(1)
+\begin{equation}
+\bigcap_{n\in\mathbb{N}} J_n = \bigcap_{n\in\mathbb{N}} I_n = \{\tau(a)\} = \{\tau(b)\}
+\end{equation}
+
+%(2)
+\begin{equation}
+\Delta(a) \supset \bigcup_{n\in\mathbb{N}}T_n^{-1}(1) \text{ and } \tau(a) \not\in \Delta(a)
+\end{equation}
+
+%(3)
+\begin{equation}
+\Delta(b) \supset \bigcup_{n\in\mathbb{N}}\widetilde{T}_n^{-1}(1) \text{ and } \tau(b) \not\in \Delta(b)
+\end{equation}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Donc $\left(\bigcap_{n\in\mathbb{N}}J_n\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right) = \emptyset$. \qed
+
+&
+
+So $\left(\bigcap_{n\in\mathbb{N}}J_n\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right) = \emptyset$. \qed
+
+\\
+
+Dans la suite on note par $g_1:\mathcal{S}\times\mathcal{I}\to\mathcal{S}$ et $g_2:\mathcal{S}\times\mathcal{I}\to\mathcal{I}$ les deux composantes de $g$.
+
+&
+
+Let $g_1:\mathcal{S}\times\mathcal{I}\to\mathcal{S}$ and $g_2:\mathcal{S}\times\mathcal{I}\to\mathcal{I}$ denote the two component functions of $g$.
+
+\\
+
+\texttt{Lemme 12.} \textit{Si $\mu$ est gagnante pour $\alpha$ alors il existe $A \in \mathcal{S}$, $a \in \mathbb{R}^*$ et $(J_n)_{n\in\mathbb{N}}\subset \mathcal{I}$ tels que:}
+
+&
+
+\texttt{Lemma 12.} \textit{If $\mu$ is an $\alpha$-winning tactic then there exist $A \in \mathcal{S}$, $a \in \mathbb{R}^*$ and $(J_n)_{n\in\mathbb{N}}\subset \mathcal{I}$ such that:}
+\end{tabular}
+
+\[
+\text{(a) }
+\bigcap_{n\in\mathbb{N}}J_n=\{a\}
+\]
+
+\[
+\text{(b) }
+\forall S \succ A \,\,\forall n \in \mathbb{N} \,\,\exists T \succ S (g_2(T,J_n)=J_{n+1})
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+\texttt{D\'emonstration.} Remarquons d'abord qu'on a:
+
+&
+
+\texttt{Proof.} Note first that we have:
+
+\end{tabular}
+
+\[\text{(*) }\forall (B,J) \,\,\exists (B',J')\succ(B,J) \,\,\forall S \succ B' \,\,\exists T \succ S (g_2(T,J)=J')\]\[ \text{ for } B,B',S,T\in\mathcal{S} \text{ and } J,J'\in\mathcal{I}\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+En effet supposons le contraire et soit $\mathcal{I}=\{I_n ; n\in\mathbb{N}\}$ une \'enum\'eration de $\mathcal{I}$. On construit alors par r\'ecurrence une suite $(B_n)_{n\in\mathbb{N}}$ dans $\mathcal{S}$ v\'erifiant:
+
+&
+
+Suppose the opposite and let $\mathcal{I}=\{I_n ; n\in\mathbb{N}\}$ be an enumeration of $\mathcal{I}$. We construct by induction a sequence $(B_n)_{n\in\mathbb{N}}$ of $\mathcal{S}$ satisfying:
+
+\end{tabular}
+
+\setcounter{equation}{0}
+%(1)
+\begin{equation}
+B = B_0 \prec B_n \prec B_{n+1}
+\end{equation}
+
+%(2)
+\begin{equation}
+\forall T \succ B_n \, (g_2(T,J)\not= I_n)
+\end{equation}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+D'o\'u pour $B_\infty = \bigcup_{n\in\mathbb{N}} B_n \in \mathcal{S}$ on a: $g_2(B_\infty,J)\not= I_n$ pour tout $n\in\mathbb{N}$ ce qui est impossible et d\'emontre (*). En notant dans (*) $(B',J') = \pi(B,J)$ on peut construire inductivement une suite $(A_n,J_n)_{n\in\mathbb{N}}$ de $\mathcal{S}\times\mathcal{I}$ avec $(A_0,J_0)$ quelconque et $(A_{n+1},J_{n+1}) = \pi(A_n,J_n)\succ(A_n,J_n)$. Alors $\{a\}=\bigcap_{n\in\mathbb{N}}J_n$ et $A=\bigcup_{n\in\mathbb{N}}A_n$ v\'erifient (a) et (b). \qed
+
+&
+
+Let $B_\infty = \bigcup_{n\in\mathbb{N}} B_n \in \mathcal{S}$ with: $g_2(B_\infty,J)\not= I_n$ for all $n\in\mathbb{N}$ which is impossible and shows (*). Noting by (*) $(B',J') = \pi(B,J)$ we may inductively construct the sequence $(A_n,J_n)_{n\in\mathbb{N}}$ of $\mathcal{S}\times\mathcal{I}$ with $(A_0,J_0)$ and $(A_{n+1},J_{n+1}) = \pi(A_n,J_n)\succ(A_n,J_n)$. So $\{a\}=\bigcap_{n\in\mathbb{N}}J_n$ and $A=\bigcup_{n\in\mathbb{N}}A_n$ verifying (a) and (b). \qed
+
+\\
+
+\texttt{D\'emonstration du th\'eor\`eme 10.} Par l'absurde: supposons $\mu$ gagnante et consid\'erons $a,$ $A$ et $J_n$ comme dans le lemme 12 et notons pour $S \succ A$ et $n\in \mathbb{N}$, par $\gamma_n(S)$ un \'el\'ement $T$ de $\mathcal{S}$ v\'erifiant la condition (b) du lemme 12. On d\'efinit alors inductivement: 
+
+&
+
+\texttt{Proof of Theorem 10.} By way of contradiction: suppose $\mu$ is an $\alpha$-winning tactic and $a,$ $A$ an $J_n$ are as in Lemma 12 and for $S \succ A$ and $n\in \mathbb{N}$, denote $\gamma_n(S)$ an element $T$ of $\mathcal{S}$ verifying condition (b) of Lemma 12. Then define inductively: 
+
+\end{tabular}
+
+\setcounter{equation}{0}
+%(1)
+\begin{equation}
+S_0 = \left\{
+\begin{array}{ll}
+A & \text{if } a \in \textrm{Dom} A \\
+A \cup \{(a,0)\} & \textrm{otherwise}
+\end{array}
+\right.
+\end{equation}
+
+%(2)
+\begin{equation}
+T_n = \gamma_n(S_n)
+\end{equation}
+
+%(3)
+\begin{equation}
+S_{n+1} = g_1(T_n,J_n)
+\end{equation}
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+Alors d'apr\'es lemme 12 (b) on a $g_2(T_n,J_n)=J_{n+1}$ donc:
+
+&
+
+Then after Lemma 12(b) with $g_2(T_n,J_n)=J_{n+1}$ therefore:
+
+\end{tabular}
+
+\[
+(T_n,J_n) \prec g(T_n,J_n) = (S_{n+1},J_{n+1})\prec (T_{n+1},J_{n+1})
+\]
+
+\begin{tabular}{p{2.8in} p{2.8in}}
+
+et $a \in \left(\bigcap_{n\in\mathbb{N}}J_n\right)\cap \textrm{Dom}T_0 \not=\emptyset$, ce qui met en d\'efaut le lemme 11 (b). \qed
+
+&
+
+and $a \in \left(\bigcap_{n\in\mathbb{N}}J_n\right)\cap \textrm{Dom}T_0 \not=\emptyset$, which contradicts Lemma 11 (b). \qed
+
+\\
+
+\texttt{Remarques 13.} (a) Dans une premi\'ere tentative de contre-exemple on a consid\'erait le m\^eme espace de base $X$ muni de la topologie de la convergence simple. Il est encore $\alpha$-favorable, mais admet une tactique gagnante pour $\alpha$ (ceci est d\^u \`a D.H. Fremlin).
+
+&
+
+\texttt{Remark 13.} (a) In a first attempt to find an counter example we considered the same basic space X with the topology of pointwise convergence. It is still $\alpha$-favorable, but also admits a winning tactic for $\alpha$ (this is due to D.H. Fremlin).
+
+\\
+
+(b) Si $\sigma$ est une strat\'egie gagnante pour $\alpha$ sur un espace $\alpha$-favorable quelconque, alors on peut en d\'eduire facilement une strat\'egie gagnante $\sigma'$ qui ne d\'epend que des coups jou\'es par $\beta$. Par contre il n'est pas du tout clair (et probablement faux) qu'on puisse d\'eduire d'une strat\'egie gagnante $\tau$ de type (II), une strat\'egie gagnante du type III (avec les notations de l\'introduction). Cependant on n'a pas d'exemple d'espace $\alpha$-favorable sans strat\'egie gagnante de type (III).
+
+&
+
+(b) If $\sigma$ is a winning strategy for $\alpha$ for some arbitrary $\alpha$-favorable spacee, then one can easily find a winning strategy which doesn't depend on the plays by $\beta$. On the contrary, it's hardly clear (and probably false) that we can produce from a winning strategy of type (II), a winning strategy of type III (with the notation of the introduction). However, there is no example of a  $\alpha$-winning space without a winning strategy of type (III).
+
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage \
+
+\newpage
+
+\centerline{\bf Detailed Proofs of some Theorems}
+
+\texttt{Proposition 7.} The family
+
+\[\{V[S,I] : S \in \mathcal{S}, I \in \mathcal{I}\}\]
+
+forms a base for the topology on $X$ such that:
+
+\[(V[S_1,I_1] \supseteq V[S_2,I_2]) \Leftrightarrow (S_1 \subseteq S_2 \text{ and } I_1 \supseteq I_2)\]
+
+\texttt{Proof:}  Recall that basic sets in $X$ are those of the form
+
+\[B(x_0,\epsilon,\{D_n\}) = \{x \in X : |x(D)-x_0(D)|<\epsilon \text{ for all } D\in\{D_n\} \}\]
+
+for $x_0 \in X$, $\epsilon>0$, and a countable subset $\{D_n\} \subset \mathcal{D}$. Also recall that the proposed base is comprised of sets of the form
+
+\[V[S,I] = \{x \in X : x(S^{-1}(1)) \in I \text{ and } x(\{t\})=0 \text{ for all } t \in S^{-1}(0)\}\]
+
+where $S \in \mathcal{S}$ and $I \in \mathcal{I}$.
+
+Let $x_0 \in X$. We will first find $\epsilon,\{D_n\}$ such that $B(x_0,\epsilon,\{D_n\}) \subseteq V[S,I]$ for any $V[S,I]$ containing $x_0$.  So consider such a $V[S,I]$ containing $x_0$ and choose $\delta>0$ such that $(-\delta,\delta) \cap I = \emptyset$. Then
+
+\[
+\begin{array}{r@{\ =\ }l}
+V[S,I]
+&
+\{x\in X : x(S^{-1}(1))\in I
+\text{ and }
+x(\{t\})\in (-\delta,\delta) \text{ for all } t \in S^{-1}(0) \}
+\\ &
+\{x \in X : x(S^{-1}(1))\in I \}
+\cap
+\{x \in X: x(\{t\})\in (-\delta,\delta) \text{ for all } t \in S^{-1}(0) \}
+\end{array}
+\]
+
+Let $J$ be an interval centered about $\tau(x_0)\in I$ such that $J \subseteq I$. Let $|J|=\textrm{diam}(J)$ and let $\epsilon=\textrm{min}(|J|/2,\delta)$.  It follows that
+
+\[
+\begin{array}{rcl}
+V[S,I]
+& \supseteq &
+\{x\in X : |x(S^{-1}(1))-x_0(S^{-1}(1))|< |J|/2 \}
+\cap
+\{x\in X : |x(S^{-1}(0))-x_0(S^{-1}(0))|< \delta \}
+\\ & = &
+B(x_0,|J|/2,\{S^{-1}(1)\})
+\cap
+B(x_0,\delta,\{S^{-1}(0)\})
+\\ & \supseteq &
+B(x_0,\epsilon,\{S^{-1}(0),S^{-1}(1)\})
+\end{array}
+\]
+
+Now consider $x_0 \in B(x_0,\epsilon,\{D_n\})$. We need to find $V[S,I]$ such that $x_0 \in V[S,I] \subseteq B(x_0,\epsilon,\{D_n\})$.
+
+Let $t_0 \in \mathbb{R}^* \setminus \left(\bigcup_{n \in \mathbb{N}} D_n \right) \setminus \left(\Delta(x_0)\right)$.  Then define
+
+\[
+S(t) = \left\{
+\begin{array}{r@{\ :\ }l}
+0
+&
+t \in \bigcup_{n\in \mathbb{N}}(D_n\setminus \Delta(x_0)) \cup \{t_0\}
+\\
+1
+&
+t \in \Delta(x_0)
+\end{array}
+\right.
+\]
+
+so that $S^{-1}(0) = \bigcup_{n\in \mathbb{N}}(D_n\setminus \Delta(x_0)) \cup \{t_0\}$ and $S^{-1}(1)=\Delta(x_0)$.
+
+Now let $I \in \mathcal{I}$ be such that $\tau(x_0) \in I$ and $|I|<\epsilon$. Note
+
+\[
+\begin{array}{r@{\ =\ }l}
+V[S,I]
+&
+\{x\in X : x(S^{-1}(1))\in I
+\text{ and }
+x(\{t\}) = 0 \text{ for all } t \in S^{-1}(0) \}
+\\ &
+\{x\in X : x(\Delta(x_0))\in I
+\text{ and }
+x(\{t\}) = 0 \text{ for all } t \in \bigcup_{n\in \mathbb{N}}(D_n\setminus \Delta(x_0)) \cup \{t_0\} \}
+\end{array}
+\]
+
+So $x_0 \in V[S,I]$ as $x_0(\Delta(x_0)) = \tau(x_0) \in I$, and $\left(\bigcup_{n\in \mathbb{N}}(D_n\setminus \Delta(x_0)) \cup \{t_0\}\right) \cap \Delta(x_0) = \emptyset$ which means $x_0(\{t\}) = 0$ for all $t \in \bigcup_{n\in \mathbb{N}}(D_n\setminus \Delta(x_0)) \cup \{t_0\}$.
+
+To show that $V[S,I] \subseteq B(x_0,\epsilon,\{D_n\})$, let $x\in V[S,I]$.  It follows that $x(\Delta(x_0)) \in I$ and thus $x(\Delta(x_0)) \not= 0$. So then $\Delta(x_0)\subseteq \Delta(x)$.  Consider $D \in \{D_n\}$.
+
+	\begin{itemize}
+	\item
+In the case that $D \subseteq \Delta(x_0) \subseteq \Delta(x)$, note $x_0(D) = x_0(\Delta(x_0))\in I$ and $x(D) = x(\Delta(x))=\tau(x)=x(\Delta(x_0)) \in I$.  Thus $|x(D)-x_0(D)| < |I| < \epsilon$.
+
+	\item
+In the other case that $D \not\subseteq \Delta(x_0)$, choose $t\in D \setminus \Delta(x_0)$. It follows that $x(\{t\})=0$ as $t \in \bigcup_{n\in \mathbb{N}}(D_n \setminus \Delta(x_0)) \cup \{t_0\}$. Thus $D \not\subseteq \Delta(x)$, and $|x(D)-x_0(D)| = |0-0| < \epsilon$.
+	\end{itemize}
+
+Thus $x \in \{x\in X: |x(D)-x_0(D)| < \epsilon \text{ for all } D \in \{D_n\}\} = B(x_0,\epsilon,\{D_n\})$ showing $V[S,I] \subseteq B(x_0,\epsilon,\{D_n\})$.
+
+Let $V_n = V[S_n,I_n]$. To complete the proof that we have a base, we should show that for $x_0 \in V_1 \cap V_2$, we have some $V[S,I]$ where $x_0 \in V[S,I] \subseteq V_1 \cap V_2$.
+
+Note that $x_0(S_1^{-1}(1)) \in I_1$ and $x_0(S_2^{-1}(1)) \in I_2$, and since $0 \not\in I_1$ and $0 \not\in I_2$, we have $x_0(S_1^{-1}(1))=x_0(S_2^{-1}(1))=\tau(x_0)\in I_1 \cap I_2$.
+
+For all $t\in \textrm{Dom}S_1 \cap \textrm{Dom}S_2$, if $x_0(\{t\})=0$, then $t\in S_1^{-1}(0)$ and $t\in S_2^{-1}(0)$ yielding $S_1(t)=S_2(t)=0$. Otherwise, $x_0(\{t\})=\tau(x_0)\not=0$, which proves $t\not\in S_1^{-1}(0)$ and $t\not\in S_2^{-1}(0)$ yielding $S_1(t)=S_2(t)=1$.  This shows that $S_1 \cup S_2$ is a function, and thus
+
+\[
+x_0 \in V[S_1\cup S_2, I_1 \cap I_2] \subseteq V_1 \cup V_2
+\]
+
+Finally, we must show the equivalence
+
+\[(V_1 \supseteq V_2) \Leftrightarrow (S_1 \subseteq S_2 \text{ and } I_1 \supseteq I_2)\]
+
+Assume $V_1 \supseteq V_2$.
+
+(a) Suppose by way of contradiction that $I_2 \not\subseteq I_1$.
+
+\[
+I_2 \setminus I_1 \setminus \textrm{Dom} S_1 \setminus \textrm{Dom} S_2 \not= \emptyset
+\]
+
+as $I_2\setminus I_1$ is uncountable and $\textrm{Dom} S_1$, $\textrm{Dom} S_2$ are countable. So let $t \in I_2 \setminus I_1 \setminus \textrm{Dom} S_1 \setminus \textrm{Dom} S_2$.
+
+Define $x_0 \in X$ by $\tau(x_0) = t$ and $\Delta(x_0) = S^{-1}_2(1)$. Note $x(D)= t$ or $0 \not\in I_1$ for all $D \in \mathcal{D}$, so
+
+\[
+x_0 \in
+\begin{array}{c}
+\{ x\in X : x(S^{-1}_2(1)) \in I_2 \text{ and } x(\{t\})=0 \text{ for all } t \in S_2^{-1}(0)\}
+\\
+\setminus
+\\
+\{ x\in X : x(S^{-1}_1(1)) \in I_1 \text{ and } x(\{t\})=0 \text{ for all } t \in S_1^{-1}(0)\}
+\end{array}
+= V_2 \setminus V_1 = \emptyset
+\]
+
+Contradiction.
+
+(b) Suppose by way of contradiction that $S_1 \not\subseteq S_2$. Then there exists $t \in \textrm{Dom} S_1$ such that either $t \not\in \textrm{Dom} S_2$ or $S_2(t) = 1-S_1(t)$.  Either way, $S= S_2 \cup \{\langle t,1-S_1(t) \rangle\}$ is a function such that $S(t)=1-S_1(t)$.
+
+Let $r \in I_2 \setminus \textrm{Dom} S$ and define $x_0 \in X$ by $\tau(x_0) = t$ and $\Delta(x_0)=S^{-1}(1)$. Note
+
+\[x_0(\{r\}) = t \not= 0 \Leftrightarrow S(r) = 1 \Leftrightarrow S_1(r)=0\]
+
+and
+
+\[x_0(\{r\}) = 0 \not\in I_1 \Leftrightarrow S(r) = 0 \Leftrightarrow S_1(r)=1\]
+
+So we have then that 
+
+\[
+x_0 \in
+\begin{array}{c}
+\{ x\in X : x(S^{-1}_2(1)) \in I_2 \text{ and } x(\{t\})=0 \text{ for all } t \in S_2^{-1}(0)\}
+\\
+\setminus
+\\
+\{ x\in X : x(S^{-1}_1(1)) \in I_1 \text{ and } x(\{t\})=0 \text{ for all } t \in S_1^{-1}(0)\}
+\end{array}
+= V_2 \setminus V_1 = \emptyset
+\]
+
+Contradiction.
+
+So by (a), (b) we have proven that forward implication.  The backward implication is trivial: If $I_2 \subseteq I_1$ and $S_1 \subseteq S_2$, then
+
+\[
+\begin{array}{rcl}
+V_2
+& = &
+\{ x\in X : x(S^{-1}_2(1)) \in I_2 \text{ and } x(\{t\})=0 \text{ for all } t \in S_2^{-1}(0)\}
+\\ & \subseteq &
+\{ x\in X : x(S^{-1}_1(1)) \in I_1 \text{ and } x(\{t\})=0 \text{ for all } t \in S_1^{-1}(0)\}
+\\ & = &
+V_1
+\end{array}
+\]
+
+\qed
+
+\newpage
+
+\texttt{Lemma 9} There exist functions $f:\mathcal{S}\cup\mathcal{T}\to\mathcal{S}$ and $d:\mathcal{T}\to\mathcal{F}$ such that
+
+(a) $T \in \mathcal{S} \Rightarrow (T,f(T))\in \mathcal{T}_0$
+
+(b) $(T',T)\in \mathcal{T}_n\setminus\mathcal{T}_{n-1} \Rightarrow (T,f(T',T))\in \mathcal{T}_{n+1}\setminus\mathcal{T}_n$
+
+(c) If $f(T_0)\subseteq T_1$ and $f(T_{n-1},T_n) \subseteq T_{n+1}$ for all $n\geq 1$, then $d(T_{n-1},T_n) = \{\textrm{Dom}T_p: 0\leq p\leq n\}$.
+
+\texttt{Proof:} A few definitions:
+
+	\begin{itemize}
+	\item $\left<\Phi_{D,n}\right>_{n\in\mathbb{N}}$ is a sequence of pairwise disjoint sets in $\mathcal{D}$ disjoint from $D$.
+	\item $\Phi_D = \bigcup_{n\in\mathbb{N}} \Phi_{D,n} \subset \mathbb{R}^*\setminus D$
+	\item $\left<\phi_{D,n}\right>_{n\in\mathbb{N}}$ is a sequence of bijections $D\to\Phi_{D,n}$.
+	\item $\mathcal{T}_{-1}=\emptyset$
+	\item $\mathcal{T}_n = \{(T',T)\in \mathcal{S}\times\mathcal{S}: (T' \subseteq T) \wedge (\Phi_{\textrm{Dom}T'}\subseteq \textrm{Dom}T)\wedge(T\restriction \Phi_{\textrm{Dom}T',p} = 1, \forall p \geq n)\}$
+	\item $\mathcal{F} \subset \mathcal{P}(\mathcal{D})$ contains exactly the finite subsets of $\mathcal{D}$.
+	\end{itemize}
+	
+We let $T',T\in \mathcal{S}$ and use the shorthand $D=\textrm{Dom}T,D'=\textrm{Dom}T'$.
+
+We define $f(T)$ such that 
+	\begin{itemize}
+	\item $\textrm{Dom}f(T)=D\cup\Phi_D$
+	\item $f(T)\restriction D = T$
+	\item $f(T)\restriction \Phi_D$ is the constant function $1$
+	\end{itemize}
+
+We verify that this definition satisfies (a) by showing $(T,f(T))\in \mathcal{T}_0$.  $f(T)$ extends $T$, that is, $T \subseteq f(T)$. We included $\Phi_D = \Phi_{\textrm{Dom}T}$ in the domain of $f(T)$, so $\Phi_{\textrm{Dom}T} \subseteq \textrm{Dom}f(T)$. Lastly, $f(T)\restriction \Phi_{\textrm{Dom}T,p} = f(T)\restriction \Phi_{D} = 1$.
+
+Now observe that $\mathcal{T}_{n-1} \subseteq \mathcal{T}_n$ for $n\in \mathcal{N}$, so for $(T',T)\in\mathcal{T}$, let $n(T',T)$ denote the least number such that $(T',T)\in\mathcal{T}_{n(T',T)}$.
+
+We first define a helper function $l_p(T',T)$ such that (preserving the numbering of the original proof),
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item If $0\leq p \leq n(T',T)$, then $l_p(T',T) = \phi^{-1}_{D',p}(\Phi_{D',p}\cap T^{-1}(1))$.
+\item If $p > n(T',T)$, then $l_p(T',T) = D$.
+\end{enumerate}
+
+We then define $f(T',T)$ such that
+
+	\begin{enumerate}
+	\setcounter{enumi}{3}
+	\item $\textrm{Dom}f(T',T) = D \cup \Phi_D$
+	\item $f(T',T) \restriction D = T$
+	\item $\ds f(T',T) \restriction \Phi_{D,p}(t) = \left\{
+\begin{array}{l}
+1 \text{ if } t \in \phi_{D,p}(l_p(T',T)) \\
+0 \text{ otherwise}
+\end{array}
+\right.$
+	\end{enumerate}
+	
+Note that (6) is equivalent to its statement in the original proof.
+
+	\begin{enumerate}
+	\setcounter{enumi}{5}
+	\item $\Phi_{D,p} \cap (f(T',T))^{-1}(1) = \phi_{D,p}(l_p(T',T))$
+	\end{enumerate}
+
+So to satisfy (b), we show that for $(T',T)\in\mathcal{T}_n\setminus\mathcal{T}_{n-1}$, $(T,f(T',T)) \in \mathcal{T}_{n+1}$. Note $f(T',T)$ extends $T$ and $\Phi_{\textrm{Dom} T} \subseteq f(T',T)$. So now assume $p \geq n+1$.
+
+\[ 
+f(T',T) \restriction \Phi_{D,p}(t) = \left\{
+\begin{array}{l}
+1 \text{ if } t \in \phi_{D,p}(l_p(T',T)) \\
+0 \text{ otherwise}
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+1 \text{ if } t \in \phi_{D,p}(D) \\
+0 \text{ otherwise}
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+1 \text{ if } t \in \Phi_{D,p} \\
+0 \text{ otherwise}
+\end{array}
+\right.
+= 1
+\]
+
+Thus $f(T',T) \in \mathcal{T}_{n+1}$.  Also we note
+
+\[
+\begin{array}{rcll}
+(f(T',T))^{-1}(1)\cap\Phi_{D,n}
+& = &
+\phi_{D,n}(l_n(T',T))
+&
+\text{by (6)}
+\\ & = &
+\phi_{D,n}(\phi^{-1}_{D',n}(\Phi_{D',n}\cap T^{-1}(1)))
+&
+\text{by (2)}
+\\ & = &
+\phi_{D,n}(\phi^{-1}_{D',n}(\Phi_{D',n}))
+&
+\text{by }(T',T)\in\mathcal{T}_n
+\\ & = &
+\phi_{D,n}(D')
+&
+\text{by definition of }\phi_{D',n}
+\\ & \subset &
+\Phi_{D,n}
+&
+\text{by } D' \subset D
+\end{array}
+\]
+
+Thus there are elements of $\Phi_{D,n}$ which aren't sent to $1$ by $f(T',T)$, and $(T,f(T',T))\not\in \mathcal{T}_n$, showing that $\mathcal{T}_{n+1}\setminus \mathcal{T}_n \not= \emptyset$.
+
+Finally, we define $d(T',T)$ for $(T',T) \in \mathcal{T}_n\setminus \mathcal{T}_{n-1}$.
+
+	\begin{enumerate}
+	\setcounter{enumi}{0}
+	\item $d(T',T)=\{l_p(T',T):0\leq p \leq n+1\}$
+	\end{enumerate}
+	
+To satisfy (c), we should show that if $f(T_0)\subseteq T_1$ and $f(T_{n-1},T_n)\subseteq T_{n+1}$ for all $n\geq 1$, then $d(T_{n-1},T_n)=\{\textrm{Dom} T_p : 0\leq p \leq n\}$. We first show such a sequence satisfies $(T_n,T_{n+1}) \in \mathcal{T}_n\setminus \mathcal{T}_{n-1}$.
+
+This follows simply from the observation that if $(T',T)\in\mathcal{T}_n$, then $(T',S)\in\mathcal{T}_n$ for any extension $S\supseteq T$.  Therefore by (a), $(T_0,f(T_0))\in \mathcal{T}_0 \Rightarrow (T_0,T_1)\in\mathcal{T}_0$. Then if we assume by way of induction that $(T_n,T_{n+1})\in\mathcal{T}_n\setminus\mathcal{T}_{n-1}$, then by (b), \[(T_{n+1},f(T_n,T_{n+1}))\in\mathcal{T}_{n+1}\setminus\mathcal{T}_n \Rightarrow (T_{n+1},T_{n+2})\in\mathcal{T}_{n+1}\setminus\mathcal{T}_n\]
+
+We will now show by induction that $l_p(T_{n-1},T_n)=D_p$ for $0\leq p \leq n$. If $n=1$, then
+
+\[
+\begin{array}{rcll}
+l_0(T_0,T_1)
+& = &
+\phi_{D_0,0}^{-1}(\Phi_{D_0,0}\cap T_1^{-1}(1))
+&
+\text{by (2) as }0 = n(T_0,T_1)
+\\ & = &
+\phi_{D_0,0}^{-1}(\Phi_{D_0,0}\cap (f(T_0))^{-1}(1))
+&
+\text{as }T_1\text{ extends }f(T_0)
+\\ & = &
+\phi_{D_0,0}^{-1}(\Phi_{D_0,0})
+&
+\text{by }f(T_0)\restriction \Phi_D = 1
+\\ & = &
+D_0
+\end{array}
+\]
+
+and by (3)
+
+\[l_1(T_0,T_1)=D_1\]
+
+So if it holds that $l_p(T_{n-1},T_n)=D_p$ when $0\leq p \leq n$, then for $0\leq p < n+1$
+
+\[
+\begin{array}{rcll}
+l_p(T_n,T_{n+1})
+& = &
+\phi_{D_n,p}^{-1}(\Phi_{D_n,p}\cap T_{n+1}^{-1}(1))
+&
+\text{by (2) as } p \leq n = n(T_n,T_{n+1})
+\\ & = &
+\phi_{D_n,p}^{-1}(\Phi_{D_n,p}\cap (f(T_{n-1},T_n))^{-1}(1))
+&
+\text{as }T_{n+1}\text{ extends }f(T_{n-1},T_n)
+\\ & = &
+\phi_{D_n,p}^{-1}(\phi_{D_n,p}(l_p(T_{n-1},T_n)))
+&
+\text{by (6)}
+\\ & = &
+l_p(T_{n-1},T_n)
+\\ & = &
+D_p
+\end{array}
+\]
+
+and for $p=n+1$, by (3),
+
+\[l_{n+1}(T_n,T_{n+1}) = D_{n+1}\]
+
+So finally, by (1), we have
+
+\[
+\begin{array}{rcll}
+d(T_n,T_{n+1})
+& = &
+\{l_p(T_n,T_{n+1}): 0 \leq p \leq n+1\}
+\\ & = &
+\{D_p : 0 \leq p \leq n+1\}
+\end{array}
+\]
+
+\qed
+
+\newpage
+
+\texttt{Theorem 8.} There exists on $X$ a winning strategy for the player $\alpha$ which depends on only the last two plays by $\beta$.
+
+\texttt{Proof:} For each $D \in \mathcal{D}$, enumerate its elements $D=\{\theta_i^D : i \in \mathbb{N}\}$.  Let $e(T',T) = \{\theta_i^D : D \in d(T',T), 0 \leq i \leq |d(T',T)|\}$. We may then define $g: \mathcal{T}\times\mathcal{I} \to \mathcal{I}$ so that $g(T',T,J)=I$ where is some interval such that
+
+	\begin{enumerate}
+	\item $\textrm{diam}(I)<\frac{1}{2}\textrm{diam}(J)$
+	\item $\overline{I} \subseteq J$
+	\item $I \subseteq (e(T',T))^c$ (which we may do as $e(T',T)$ is finite)
+	\end{enumerate}
+	
+We give $\alpha$ the strategy $\sigma$ such that on the first turn, $\alpha$ plays \[\sigma(V[T,J])=V[f(T),J]\] and on subsequent turns $\alpha$ plays \[\sigma(V[T',J'],V[T,J])=V[f(T',T),g(T',T,J)]\]
+
+Let $I_n=g(T_{n-1},T_n,J_n)$ and $D_n=\textrm{Dom}T_n$. The game proceeds as follows:
+
+\[
+\begin{array}{cccccccc}
+\beta: & V[T_0,J_0] & & V[T_1,J_1] & & V[T_2,J_2] & & \dots \\
+\alpha: & & V[f(T_0,J_0)] & & V[f(T_0,T_1),I_1] & & V[f(T_1,T_2),I_2] & \dots
+\end{array}
+\]
+
+Observe that $J_1 \supseteq \overline{I_1} \supseteq J_2 \supseteq \overline{I_2} \supseteq \dots$ with $\textrm{diam}(\overline{I_n})\to 0$, so $\bigcap_{n\in\mathbb{N}} J_n = \bigcap_{n\in\mathbb{N}} I_n = \{t\}$ for some $t$. Also, since $e(T_{n-1},T_n)$ captures the first $n$ elements of the first $n$ domains of the $\{T_n\}$, 
+
+\[
+t\in \bigcap_{n\in\mathbb{N}} I_n \subseteq \bigcap_{n>0} (e(T_{n-1},T_n))^c
+=
+\left(\bigcup_{n>0} e(T_{n-1},T_n)\right)^c
+=
+\left(\bigcup_{n\in\mathbb{N}} D_n\right)^c
+\]
+
+So $t\not\in D_n$ for any $n$. Therefore let $a\in X$ be defined by $\tau(a) = t$ and $\Delta(a) = \bigcup_{n\in\mathbb{N}}T_n^{-1}(1)$. Consider any $V[T_n,J_n]$ and note that as $T_n^{-1}(1)\subseteq \Delta(a)$,
+
+\[a(T_n^{-1}(1))=\tau(a) = t \in I_n\]
+
+And for $r\in T_n^{-1}(0)$, $\{r\}\not\subseteq \Delta(a)$, so $a(\{r\})=0$. So we have $a\in V[T_n,I_n]$ for all $n$, and $\alpha$ wins the game. \qed
+
+\newpage
+
+\texttt{Lemma 11.} If $\mu$ is an $\alpha$-winning tactic then there exists $g: \mathcal{S}\times\mathcal{I} \to \mathcal{S}\times\mathcal{I}$ such that
+
+(a) $(T,J) \prec g(T,J)$ for all $(T,J)\in\mathcal{S}\times\mathcal{I}$
+
+(b) If $g(T_n,J_n) \prec(T_{n+1},J_{n+1})$ for all $n\in\mathbb{N}$, then $\left(\bigcap_{n\in\mathbb{N}}I_n\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right) =\emptyset$.
+
+\texttt{Proof:} Give pairs in $\mathcal{S}\times\mathcal{I}$ the transitive relation $\prec$ where
+
+\[(T,J)\prec (S,I) \Leftrightarrow S \supseteq T \wedge \overline{I}\subseteq J \wedge \textrm{diam} I < \frac{1}{2}\textrm{diam}J\]
+
+We then begin by noting that we may assume $\mu(V[T,J])=V[h_1(T,J),h_2(T,J)]$ for some $h_1,h_2$.  
+
+By Proposition 7,
+
+\[V[T,J] \supseteq V[h_1(T,J),h_2(T,J))] \Leftrightarrow h_1(T,J) \supseteq T \wedge h_2(T,J) \subseteq J\]
+
+We may additionally assume that
+
+\[ \overline{h_2(T,J)} \subseteq J \wedge \textrm{diam} h_2(T,J) < \frac{1}{2} \textrm{diam} J\]
+
+since $\beta$ could force this for every other turn anyway. Therefore, we assume $(T,J) \prec (h_1(T,J),h_2(T,J))$.
+
+For each $S \in \mathcal{S}$, we let $S^*$ be the function such that \[\textrm{Dom}S^*=\textrm{Dom}S \text{ and } S^*(t)=1-S(t) \text{ for all } t\in \textrm{Dom}S^*\]
+
+Then, we define the functions $g_1$,$g_2$ by \[g_1(T,J)=[h_1([h_1(T,J)]^*,h_2(T,J))]^* \text{ and } g_2(J)=h_2(h_1(T,J),h_2(T,J))\]
+
+We note for $t\in \textrm{Dom} T$, we have \[g_1(T,J)(t) = 1-h_1([h_1(T,J)]^*)(t)=1-[h_1(T,J)]^*(t)=h_1(T,J)(t)=T(t)\] and thus $g_1(T,J)$ extends $T$, and as the interval requirements are satisfied as well, we have \[(T,J) \prec (g_1(T,J),g_2(T,J))\] satisfying (a) for $g(T,J)=(g_1(T,J),g_2(T,J))$.
+
+Now let $(T_n,J_n)$ be a sequence such that $g(T_n,J_n)=(g_1(T_n),g_2(J_n))\prec (T_{n+1},J_{n+1})$ for all $n\in\mathbb{N}$ as in the hypothesis of (b), and denote $S_n=h_1(T_n)$ and $I_n=h_2(J_n)$.  Let $V_n=V[T_n,J_n]$. Since \[(T_n,J_n)\prec h(T_n,J_n) \prec (T_{n+1},J_{n+1}) \Rightarrow V_n \supseteq \mu(V_n) \supseteq V_{n+1}\] it follows that $V_n$ are the legal moves of $\beta$ when $\alpha$ uses the winning strategy $\mu$, and thus $\bigcap_{n\in\mathbb{N}} V_n \not= \emptyset$.
+
+We claim that $h(S^*_n,I_n) \prec (S^*_{n+1},I_{n+1})$. Let $t\in\textrm{Dom}{S^*_n}$. \[S^*_{n+1}(t)=1-S_{n+1}(t)=1-T_{n+1}(t)=1-g_1(T_n,J_n)(t)=h_1([h_1(T_n,J_n)]^*,h_2(T_n,J_n))(t)=h_1(S_n^*)(t)\] and we have the result since the interval requirements are easily seen to be satisfied.
+
+Now, similarly to before, since we have \[(S^*_n,I_n)\prec h(S^*_n,I_n) \prec (S^*_{n+1},I_{n+1}) \Rightarrow V[S^*_n,I_n] \supseteq \mu(V[S^*_n,I_n]) \supseteq V[S^*_{n+1},I_{n+1}]\] it follows that $V[S^*_n,I_n]$ are legal moves of $\beta$ when $\alpha$ uses the winning strategy $\mu$, and thus $\bigcap_{n\in\mathbb{N}} W_n \not= \emptyset$ for $W_n=V[S^*_n,I_n]$.
+
+So choose $a\in \bigcap_{n\in\mathbb{N}} V_n$ and $b\in \bigcap_{n\in\mathbb{N}} W_n$. First note that since \[J_0 \supseteq \overline{I_0} \supseteq J_1 \supseteq \overline{I_1} \supseteq \dots \text{ and } \textrm{diam} \overline{I_n} \to 0\] we have that \[\bigcap_{n\in\mathbb{N}} J_n = \bigcap_{n\in\mathbb{N}} I_n = \{t\}\] for some singleton $t\not=0$. In fact, $t$ must be $\tau(a)=\tau(b)$.
+
+Then note that for all $n$, \[a(T_n^{-1}(1))\in J_n \Rightarrow a(T_n^{-1}(1))=\tau(a) \Rightarrow T_n^{-1}(1) \subseteq \Delta(a)\] and \[b(S_n^{*-1}(1))\in I_n \Rightarrow b(S_n^{*-1}(1))=\tau(b) \Rightarrow S_n^{*-1}(1) \subseteq \Delta(b)\Rightarrow S_n^{-1}(0)\subseteq\Delta(b)\]
+
+So since \[\bigcup_{n\in\mathbb{N}} S_n^{-1}(0)=\bigcup_{n\in\mathbb{N}} T_n^{-1}(0)\] and \[\bigcup_{n\in\mathbb{N}} T_n^{-1}(0) \cup \bigcup_{n\in\mathbb{N}} T_n^{-1}(1) = \bigcup_{n\in\mathbb{N}} \textrm{Dom} T_n\] we have that \[\bigcup_{n\in\mathbb{N}} \textrm{Dom} T_n \subseteq \Delta(a) \cup \Delta(b) \not\ni t\] and \[\left(\bigcap_{n\in\mathbb{N}}I_n\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right) =\left(\{t\}\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom}T_n\right)=\emptyset\] \qed
+
+\newpage
+
+\texttt{Lemma 12.} If $\mu$ is an $\alpha$-winning tactic then there exist $A \in \mathcal{S}$, $a \in \mathbb{R}^*$ and $\{J_n:n\in\mathbb{N}\}\subseteq \mathcal{I}$ such that:
+
+(a)
+$\ds \bigcap_{n\in\mathbb{N}}J_n=\{a\}$
+
+(b)
+$\ds \forall S \supseteq A \,\,\forall n \in \mathbb{N} \,\,\exists T \supseteq S (g_2(T,J_n)=J_{n+1})$
+
+\texttt{Proof.} Suppose by way of contradiction that:
+
+\[\exists (B,J) \,\,\forall (B',J')\succ(B,J) \,\,\exists S \supseteq B' \,\,\forall T \supseteq S (g_2(T,J)\not=J')\]
+
+Let $\mathcal{I}=\{I_n : n\in\mathbb{N}\}$ be an enumeration of $\mathcal{I}$. Let $B_0=B$, and let $B_{n+1}$ be the $S$ extending $B_n'$ above so that 
+
+\begin{equation}
+\forall T \supseteq B_{n+1} \, (g_2(T,J)\not= I_n)
+\end{equation}
+
+Let $B_\infty = \bigcup_{n\in\mathbb{N}} B_n \in \mathcal{S}$ and note $g_2(B_\infty,J)\not= I_n$ for all $n\in\mathbb{N}$ since $B_\infty$ extends each $B_n$. Contradiction as $g_2(B_\infty,J)$ must map to some element of $\mathcal{I}$. So we have
+
+\[\forall (B,J) \,\,\exists (B',J')\succ(B,J) \,\,\forall S \succ B' \,\,\exists T \succ S (g_2(T,J)=J')\]
+
+Let $(A_0,J_0)$ be anything, with $(A_{n+1},J_{n+1}) = (A_n',J_n')$. So $\{a\}=\bigcap_{n\in\mathbb{N}}J_n$ and $A=\bigcup_{n\in\mathbb{N}}A_n$, which trivially satisfies (a). It also satisfies (b) since for all $S\supseteq A$, $S\supseteq A_n$ for all $n$, so there exists a $T \supseteq S$ such that $g_2(T,J_n)=J_n'=J_{n+1}$.  \qed
+
+\newpage
+
+\texttt{Theorem 10.} There does not exist an $\alpha$-winning strategy on $X$ which depends on only the most recent play by $\beta$.
+
+Suppose by way of contradiction there exists an $\alpha$-winning tactic. By Lemma $12$, there are $A \in \mathcal{S}$, $a \in \mathbb{R}^*$, and $\{J_n:n\in\mathbb{N}\}\subseteq \mathcal{I}$ such that $J_n \supseteq J_{n+1}$, $\bigcap_{n\in\mathbb{N}} J_n = \{a\}$, and \[\forall S \supseteq A \, \forall n\in\mathbb{N} \, \exists \gamma_n(S) \supseteq S \, (g_2(\gamma_n(S),J_n)=J_{n+1})\]
+
+Then define
+\[
+S_0 = \left\{
+\begin{array}{ll}
+A & \text{if } a \in \textrm{Dom} A \\
+A \cup \{(a,0)\} & \text{otherwise}
+\end{array}
+\right.
+\]
+\[
+T_n = \gamma_n(S_n)
+\]
+\[
+S_{n+1} = g_1(\gamma_n(S_n),J_n)
+\]
+
+And thus we have
+\[(T_n,J_n) \prec g(T_n,J_n) = g(\gamma_n(S_n),J_n) = (S_{n+1},J_{n+1}) \prec (T_{n+1},J_{n+1})\]
+
+These $(T_n,J_n)$ satisfy the hypothesis of Lemma 11b; however, note that \[a \in \left(\bigcap_{n\in\mathbb{N}}J_n\right) \cap \textrm{Dom} T_0 \subseteq \left(\bigcap_{n\in\mathbb{N}}J_n\right) \cap \left(\bigcup_{n\in\mathbb{N}}\textrm{Dom} T_n\right) = \emptyset\] a contradiction. \qed
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
